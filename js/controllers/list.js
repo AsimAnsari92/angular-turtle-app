@@ -22,18 +22,17 @@ function lsitCtrls()
 		function lsitCtrls()
 		{
             vm=this;
-			vm.data1=turtlesData;
+			vm.data=turtlesData;
             vm.activeTurtle={};
             vm.changeActiveTurtle=changeActiveTurtle;
+            vm.activateQuiz = activateQuiz;
             vm.activeQuiz=false;
-            vm.ActivateQuiz=ActivateQuiz;
             vm.search="";
-            function changeActiveTurtle(index)
+             function changeActiveTurtle(index)
             {
-                console.log(index);
-                vm.activeTurtle=index;
-            }
-            function ActivateQuiz()
+                 vm.activeTurtle=index;
+            } 
+            function activateQuiz()
             {
                 vm.activeQuiz=true;
             }
