@@ -5,14 +5,18 @@
 	*
 	* Description
 	*/
-	angular.module('turtleFacts')
-		   .controller('QuizController',QuizController );
+ angular.module("turtleFacts")
+		.controller('QuizCtrl',QuizController);
 
-	function QuizController()
-	{
-		vm= this;
-	}	
+		QuizController.$inject=['quizMectrics','DataService'];
 
+function QuizController(quizMectrics,DataService)
+{
+	var vm = this;
+	vm.quizMectrics = quizMectrics;
+	vm.DataService = DataService;
+
+}
 
 
 })();
