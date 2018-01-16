@@ -15,6 +15,7 @@ function QuizController(quizMectrics,DataService)
 	var vm = this;
 	vm.quizMectrics = quizMectrics;
 	vm.DataService = DataService;
+	vm.selectedAnswer = selectedAnswer;
 	vm.activeQuestion=	0;
 	vm.QuizAnswer= QuizAnswer;
 
@@ -22,12 +23,17 @@ function QuizController(quizMectrics,DataService)
 	function QuizAnswer()
 	{
 		var quizLength = DataService.quizQuestions.length - 1;
-		if(quizLength<vm.activeQuestion)
+			console.log( quizLength>vm.activeQuestion);
+		if(quizLength>vm.activeQuestion)
 		{
 			vm.activeQuestion++;
+			console.log(vm.activeQuestion);
 		}
 	}
-
+	function selectedAnswer(index)
+	{
+ 		DataService.quizQuestions[vm.activeQuestion].selected = index;
+	}
 
 
 
