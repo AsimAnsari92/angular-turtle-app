@@ -20,14 +20,22 @@ function QuizController(quizMectrics,DataService)
 	vm.QuizAnswer= QuizAnswer;
 
 	var numberofQuestionAnswered= 0;
-	function QuizAnswer()
+
+	function QuizAnswer(index)
 	{
-		var quizLength = DataService.quizQuestions.length - 1;
-			console.log( quizLength>vm.activeQuestion);
-		if(quizLength>vm.activeQuestion)
+		if(index===undefined)
 		{
-			vm.activeQuestion++;
-			console.log(vm.activeQuestion);
+			var quizLength = DataService.quizQuestions.length - 1;
+				console.log( quizLength>vm.activeQuestion);
+			if(quizLength>vm.activeQuestion)
+			{
+				vm.activeQuestion++;
+				console.log(vm.activeQuestion);
+			}
+		}
+		else
+		{
+			vm.activeQuestion = index;
 		}
 	}
 	function selectedAnswer(index)

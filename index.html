@@ -93,7 +93,8 @@
              <div class="col-xs-8">
               <h2>Progress:</h2>
               <div class="btn-toolbar">
-              <button class="btn" 
+              <button class="btn"
+                      ng-click="quiz.QuizAnswer($index)" 
                       ng-repeat="question in quiz.DataService.quizQuestions"
                       ng-class="{'btn-info': question.selected !==null, 'btn-danger':question.selected===null}"> 
                   <span class="glyphicon" ng-class="{'glyphicon-pencil':question.selected !==null, 'glyphicon-question-sign':question.selected===null}"></span>
